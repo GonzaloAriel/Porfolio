@@ -19,22 +19,34 @@ header {
     border: 1px black;
 }
 
-.sMi {
+.header-container{
     text-align: center;
-    font-family: monospace;
-    font-size: xx-large;
-    padding: 10px;
 }
 
-/***************************************************************/
-/*Footer*/
-
-footer {
-    width: 80%;
-    margin: 0 auto;
+.menu-nav{
+    display:flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    background-color: violet;
-    border: 1px black;
+}
+
+ .nav-ul {
+  list-style: none;       /* Saca los puntos de la lista */
+  padding: 0;
+  margin: 0;
+  display: flex;          /* Los pone uno al lado del otro */
+  gap: 20px;              /* Espacio entre cada li */
+}
+
+.nav-ul li a {
+  text-decoration: none;  /* Saca el subrayado */
+  color: #333;            /* Cambiá el color como prefieras */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-ul li a:hover {
+  color: #007bff;         /* Efecto hover (azul) */
 }
 
 /***************************************************************/
@@ -69,3 +81,19 @@ footer {
     line-height: 50px;
 }
 
+.sMi {
+    text-align: center;
+    font-size: xx-large;
+    padding: 10px;
+}
+
+/***************************************************************/
+/*Footer*/
+
+footer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: violet;
+    border: 1px black;
+}
