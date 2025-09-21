@@ -19,7 +19,7 @@ header {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    background-color:darkred;
+    background-color:dimgray;
     border: 1px black;
     font-family:'Courier New', Courier, monospace;
 }
@@ -61,7 +61,7 @@ header {
 
 .menu-nav {
     display: flex;
-    justify-content:left
+    justify-content:left;
     align-items: center;
     padding-top: 40px;
 }
@@ -99,7 +99,7 @@ header {
     width: 80%;
     margin: 0 auto;
     padding: 1px;
-    background-color:darkred;
+    background-color:dimgray;
 }
 
 .bloque {
@@ -134,4 +134,29 @@ header {
 
 footer {
     grid-column: 1/3;
+}
+
+/***************************************************************/
+/*Media queries*/
+
+@media (max-width: 600px) {
+  body {
+    background-size: contain; /* evita que se corte mucho la imagen */
+  }
+
+  .nav-ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .bloque {
+    font-size: small;
+    line-height: 25px;
+    padding: 15px;
+  }
+
+  .sMi {
+    font-size: large;
+  }
 }
