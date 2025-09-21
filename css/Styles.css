@@ -129,6 +129,12 @@ header {
     padding: 10px;
 }
 
+.mensaje{
+  grid-column: 1/3;
+  display: block;
+  text-align: center;
+}
+
 /***************************************************************/
 /*Footer*/
 
