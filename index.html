@@ -1,149 +1,437 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"Gonzalo Ariel Acuña"</title>
+    <meta name="description"
+        content="Portfolio de Gonzalo Ariel Acuña, Desarrollador de Software .NET / Backend. Una travesía gótico-victoriana por La Ciudad Velada.">
+    <meta name="theme-color" content="#0a0608">
+    <title>Gonzalo Ariel Acuña · Desarrollador .NET Backend</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IM+Fell+English:ital@0;1&family=UnifrakturCook:wght@700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/Styles.css">
 </head>
 
-<body>
+<body class="is-loading">
 
-    <header>
-        <div class="header-container">
-
-            <div class="img-perfil">
-                <img src="./img/1667688390867.jpg" alt="foto-perfil">
-            </div>
-
-            <div class="presentacion">
-                <h1>Gonzalo Ariel Acuña</h1>
-                <p>Estudiante de Tecnicatura en Programación | Aspirante a Desarrollador
-                    | Software Developer | Apasionado por la tecnología y la programación
-                    | Buscando mi primera oportunidad en IT </p>
-                <nav class="menu-nav">
-                    <ul class="nav-ul">
-                        <li><a href="sobre-mi">Sobre mí</a></li>
-                        <li><a href="experiencia">Experiencia</a></li>
-                        <li><a href="educacion">Educación</a></li>
-                        <li><a href="proyectos">Proyectos</a></li>
-                        <li><a href="habilidades">Habilidades</a></li>
-                        <li><a href="certificaciones">Certificaciones</a></li>
-                        <li><a href="contacto">Contacto</a></li>
-                    </ul>
-                </nav>
-            </div>
-
+    <!-- ============================================================
+         LOADER — "Buscando presa..."
+         ============================================================ -->
+    <div id="loader" class="loader" role="status" aria-live="polite" aria-label="Cargando">
+        <div class="loader-inner">
+            <svg class="loader-sigil" viewBox="0 0 100 100" aria-hidden="true">
+                <use href="#sigil-strokes"></use>
+            </svg>
+            <p class="loader-text">Buscando presa<span class="dots"></span></p>
         </div>
+    </div>
+
+    <!-- Cursor personalizado: luz de vela -->
+    <div class="cursor-halo" aria-hidden="true"></div>
+    <div class="cursor-dot" aria-hidden="true"></div>
+
+    <!-- Overlay easter egg: Frenesi -->
+    <div class="frenzy" aria-hidden="true">
+        <span class="frenzy-text">&#161;La Bestia te ha consumido!</span>
+    </div>
+
+    <!-- Defs SVG reutilizables (sigilo original, no de obras ajenas) -->
+    <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <g id="sigil-strokes">
+                <path d="M50 6 L86 30 L86 70 L50 94 L14 70 L14 30 Z" fill="none" stroke="currentColor"
+                    stroke-width="2.2" />
+                <path d="M50 22 L50 78" fill="none" stroke="currentColor" stroke-width="2.2" />
+                <path d="M50 38 L67 55 L50 72 L33 55 Z" fill="none" stroke="currentColor" stroke-width="2.2" />
+                <circle cx="50" cy="55" r="4.2" fill="currentColor" />
+                <path d="M50 6 L50 15 M50 85 L50 94 M14 30 L23 35 M86 30 L77 35 M14 70 L23 65 M86 70 L77 65"
+                    fill="none" stroke="currentColor" stroke-width="1.4" />
+            </g>
+        </defs>
+    </svg>
+
+    <!-- Barra de utilidades fija -->
+    <button id="audio-toggle" class="audio-toggle" type="button" aria-pressed="false"
+        aria-label="Activar sonido ambiental">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20">
+            <path d="M12 3a6 6 0 0 0-6 6v3l-2 4h16l-2-4V9a6 6 0 0 0-6-6z" fill="none" stroke="currentColor"
+                stroke-width="1.6" stroke-linejoin="round" />
+            <path d="M9.5 19a2.5 2.5 0 0 0 5 0" fill="none" stroke="currentColor" stroke-width="1.6"
+                stroke-linecap="round" />
+        </svg>
+    </button>
+
+    <header class="site-header" id="site-header">
+        <a class="crest" id="crest" href="#hero" aria-label="Inicio — sigilo del cazador">
+            <svg viewBox="0 0 100 100" aria-hidden="true">
+                <use href="#sigil-strokes"></use>
+            </svg>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-nav">
+            <span class="nav-toggle-label">Registros</span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <nav class="menu-nav" id="menu-nav" aria-label="Secciones del portfolio">
+            <ul class="nav-ul">
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#educacion">Educación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="site-container">
+    <main>
 
-        <div class="bloque sobre-mi">
-            <h2 class="sMi">Sobre mí</h2>
-            <p>
-                Estoy en búsqueda de mi primera experiencia laboral en el área IT, con fuerte interés en programación
-                (backend, frontend o fullstack). Mi objetivo es consolidar mis conocimientos, aportar al equipo y
-                crecer profesionalmente en el sector tecnológico. Me motiva aprender constantemente y asumir nuevos
-                desafíos.
-            </p>
-        </div>
+        <!-- ============================================================
+             HERO — "La Entrada a la Ciudad Velada"
+             ============================================================ -->
+        <section id="hero" class="hero" aria-label="Presentacion">
+            <div class="hero-stage" data-parallax-root>
+                <div class="hero-layer hero-sky" data-depth="0.02"></div>
+                <div class="hero-layer hero-moon" data-depth="0.06"></div>
 
-        <div class="bloque experiencia">
-            <h2>Experiencia Laboral</h2>
-            <article class="card">
-                <h3>Operador Informático – Willder S.A.</h3>
-                <p><em>2017 - Actualidad</em></p>
-                <ul>
-                    <li>Elaboración de informes de producción y tizados optimizados.</li>
-                    <li>Coordinación de equipos y gestión de abastecimiento.</li>
-                    <li>Manejo de software de diseño aplicado a la producción de indumentaria.</li>
-                </ul>
-            </article>
-        </div>
+                <div class="hero-layer hero-spires-far" data-depth="0.12">
+                    <svg viewBox="0 0 1200 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+                        <path
+                            d="M0 420 V300 H40 V250 L60 210 L80 250 V300 H120 V240 L150 180 L180 240 V300 H220 V260 L240 230 L260 260 V300 H300 V200 L340 120 L380 200 V300 H420 V250 H450 V210 L470 180 L490 210 V250 H530 V300 H560 V250 L600 190 L640 250 V300 H700 V230 L720 200 L740 230 V300 H780 V260 H820 V210 L850 170 L880 210 V260 H920 V300 H960 V250 L1000 200 L1040 250 V300 H1080 V260 H1130 V300 H1200 V420 Z"
+                            fill="currentColor" />
+                        <circle cx="600" cy="165" r="16" fill="#0a0608" opacity="0.7" />
+                        <circle cx="340" cy="185" r="10" fill="#0a0608" opacity="0.7" />
+                        <circle cx="850" cy="200" r="9" fill="#0a0608" opacity="0.7" />
+                    </svg>
+                </div>
 
-        <div class="bloque educacion">
-            <h2>Educación</h2>
-            <ul>
-                <li><strong>Tecnicatura en Programación</strong> – UTN (2021 - Actualidad)</li>
-                <li><strong>Curso de JavaScript</strong> – Coderhouse (2024)</li>
-                <li><strong>Desarrollo Web</strong> – Coderhouse (2023)</li>
-                <li><strong>Bases de Datos – Fundamentos Avanzados</strong> – UTN (2022)</li>
-            </ul>
-        </div>
+                <div class="hero-layer fog fog-a" data-depth="0.18"></div>
+                <div class="hero-layer fog fog-b" data-depth="0.28"></div>
 
-        <div class="bloque proyectos">
-            <h2>Proyectos Académicos</h2>
-            <article>
-                <h3>Card Jitsu++</h3>
-                <p><strong>Tecnología:</strong> C++</p>
-                <p>
-                    Desarrollo en equipo de un juego de cartas por turnos inspirado en "Card Jitsu". Aplicamos conceptos
-                    de programación estructurada y lógica de juego.
-                </p>
-            </article>
-        </div>
+                <div class="hero-layer hero-spires-near" data-depth="0.4">
+                    <svg viewBox="0 0 1200 360" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+                        <path
+                            d="M0 360 V250 H90 V170 L130 90 L170 170 V250 H240 V210 L270 170 L300 210 V250 H360 V160 L410 60 L460 160 V250 H520 V200 L560 150 L600 200 V250 H660 V170 L710 80 L760 170 V250 H820 V210 L850 180 L880 210 V250 H960 V160 L1010 70 L1060 160 V250 H1130 V200 H1200 V360 Z"
+                            fill="currentColor" />
+                        <path d="M410 60 V30 M130 90 V55 M710 80 V48 M1010 70 V40" stroke="currentColor" stroke-width="4" />
+                    </svg>
+                </div>
 
-        <div class="bloque habilidades">
-            <h2>Habilidades Técnicas</h2>
-            <p><strong>Lenguajes:</strong> C++, C#, JavaScript, COBOL, SQL</p>
-            <p><strong>Frontend:</strong> HTML5, CSS, Bootstrap, SASS</p>
-            <p><strong>Backend:</strong> Node.js, Oracle APEX</p>
-            <p><strong>Herramientas:</strong> Git, GitHub, Linux, Windows</p>
-            <p><strong>Diseño:</strong> Photoshop, Illustrator, Canva, CorelDRAW</p>
-            <p><strong>Idiomas:</strong> Inglés – Nivel básico</p>
-        </div>
-
-        <div class="bloque certificaciones">
-            <h2>Certificaciones</h2>
-            <ul>
-                <li>Curso de JavaScript – Coderhouse (2024)</li>
-            </ul>
-            <ul>
-                <li>Desarrollo Web – Coderhouse (2023)</li>
-            </ul>
-            <ul>
-                <li>Base de Datos - Fundamentos Avanzados – Centro de e-Learning UTN FRBA (2022)</li>
-            </ul>
-        </div>
-
-        <div class="bloque contacto">
-            <h2>Contacto</h2>
-            <p><strong>📍</strong> Moreno, Buenos Aires</p>
-            <p><strong>📧</strong> <a href="mailto:gonzaloarielacuna@gmail.com">gonzaloarielacuna@gmail.com</a></p>
-            <p><strong>📱</strong> +54 11-2268-4117</p>
-            <p><strong>💼</strong> LinkedIn: https://linkedin.com/in/-gonzalo-ariel-acuña / GitHub:
-                https://github.com/GonzaloAriel</p>
-        </div>
-
-        <form class="bloque mensaje" action="https://formsubmit.co/gonzaloarielacuna@gmail.com" method="POST">
-            <div class="form-estilo">
-                <h2>Mensaje</h2>
-
-                <label for="name">Nombre</label>
-                <input type="text" name="name" id="name" placeholder="Nombre">
-
-                <label for="phone">Teléfono</label>
-                <input type="tel" name="phone" id="phone" placeholder="Teléfono">
-
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Email">
-
-                <label for="message">Mensaje</label>
-                <textarea name="message" id="message" cols="30" rows="5" placeholder="Mensaje"></textarea>
-
-                <input class="btn-enviar" type="submit" value="Enviar">
-
-                <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
-                <input type="hidden" name="_captcha" value="false">
+                <div class="hero-ground" data-depth="0.5"></div>
+                <canvas id="particles" class="particles" aria-hidden="true"></canvas>
             </div>
-        </form>
 
-        <footer class="bloque footer">
-            <p>© 2024 Gonzalo Ariel Acuña | Portfolio personal</p>
-        </footer>
-    </section>
+            <div class="hero-content" data-depth="-0.12">
+                <p class="hero-eyebrow">Moreno, Buenos Aires</p>
+                <h1 class="hero-name" data-text="Gonzalo Ariel Acuña">Gonzalo Ariel Acuña</h1>
+                <svg class="drips" viewBox="0 0 600 60" aria-hidden="true" preserveAspectRatio="xMidYMin meet">
+                    <path class="drip" d="M150 4 c6 14 6 26 0 40 c-6 -14 -6 -26 0 -40z" />
+                    <path class="drip" d="M300 2 c7 16 7 30 0 46 c-7 -16 -7 -30 0 -46z" />
+                    <path class="drip" d="M452 6 c5 12 5 24 0 36 c-5 -12 -5 -24 0 -36z" />
+                </svg>
+                <p class="hero-subtitle">Desarrollador de Software .NET &middot; Backend</p>
+                <a class="btn-despertar" href="#sobre-mi">
+                    <span class="flame" aria-hidden="true"></span>
+                    <span class="btn-text">Despertar</span>
+                </a>
+            </div>
+
+            <div class="scroll-vial" aria-hidden="true">
+                <svg viewBox="0 0 40 120">
+                    <clipPath id="vial-clip">
+                        <path d="M14 26 h12 v70 a6 6 0 0 1 -12 0 z" />
+                    </clipPath>
+                    <rect class="vial-blood" x="0" y="0" width="40" height="120" clip-path="url(#vial-clip)" />
+                    <path class="vial-glass" d="M12 24 h16 v72 a8 8 0 0 1 -16 0 z" />
+                    <rect class="vial-cork" x="12" y="14" width="16" height="12" rx="2" />
+                    <path class="vial-cap" d="M11 10 h18 v6 h-18 z" />
+                </svg>
+            </div>
+
+            <p class="scroll-hint">Descendé</p>
+        </section>
+
+        <!-- ============================================================
+             SOBRE MI — "El Diario del Cazador"
+             ============================================================ -->
+        <section id="sobre-mi" class="district district--diario reveal">
+            <p class="district-rune" aria-hidden="true">&#10022;</p>
+            <h2 class="district-title">El Diario del Cazador</h2>
+            <p class="district-kicker">Sobre mí</p>
+            <div class="diario">
+                <div class="diario-portrait">
+                    <img src="./img/1667688390867.jpg"
+                        alt="Retrato de Gonzalo Ariel Acuña en un marco ovalado victoriano" loading="lazy">
+                </div>
+                <div class="diario-text">
+                    <p>
+                        Desarrollador de Software orientado a Backend, con experiencia práctica en C#, .NET Framework,
+                        ASP.NET Core y SQL Server, enfocado en el desarrollo de sistemas de gestión y soluciones web
+                        orientadas a procesos de negocio reales. Experiencia en diseño e implementación de aplicaciones
+                        utilizando arquitectura en capas, APIs REST, programación orientada a objetos, acceso y
+                        persistencia de datos, autenticación y manejo de roles.
+                    </p>
+                    <p>
+                        Como desarrollador independiente he diseñado y construido soluciones propias desde el análisis
+                        del problema hasta el desarrollo, la implementación y la puesta en producción: sistemas de gestión
+                        comercial, control de stock, cuentas corrientes y gestión de turnos. Mi experiencia previa en
+                        entornos productivos me permite combinar el desarrollo de software con una comprensión práctica de
+                        procesos operativos, planificación, gestión de recursos y necesidades reales de negocio.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             PROYECTOS — "El Bestiario"
+             ============================================================ -->
+        <section id="proyectos" class="district district--bestiario reveal">
+            <p class="district-rune" aria-hidden="true">&#10022;</p>
+            <h2 class="district-title">El Bestiario</h2>
+            <p class="district-kicker">Proyectos</p>
+            <div class="beast-grid">
+                <article class="beast-card">
+                    <h3 class="beast-name">Minimercado</h3>
+                    <p class="beast-type"><span>Sistema de Gestión Comercial</span></p>
+                    <p class="beast-role">Fundador &amp; Desarrollador · Ene 2026</p>
+                    <p>
+                        Sistema de gestión web para kioscos y minimercados, orientado a digitalizar operaciones
+                        comerciales. Diseño y desarrollo integral con C# y ASP.NET Core MVC: módulos de ventas, control
+                        de stock y cuentas corrientes ("fiado"), arquitectura en capas, APIs REST, autenticación por
+                        roles, multi-tenant y persistencia en SQL Server.
+                    </p>
+                    <ul class="beast-tags">
+                        <li>C#</li>
+                        <li>ASP.NET Core MVC</li>
+                        <li>SQL Server</li>
+                        <li>LINQ</li>
+                        <li>Stored Procedures</li>
+                        <li>APIs REST</li>
+                        <li>Azure</li>
+                        <li>Vercel</li>
+                    </ul>
+                    <dl class="beast-stats">
+                        <div><dt>Rol</dt><dd>Fundador &amp; Dev</dd></div>
+                        <div><dt>Deploy</dt><dd>Azure · Vercel</dd></div>
+                    </dl>
+                    <a class="beast-link" href="https://minimercado-five.vercel.app" target="_blank"
+                        rel="noopener noreferrer">Ver demo &rarr;</a>
+                </article>
+
+                <article class="beast-card">
+                    <h3 class="beast-name">JKTURNOS</h3>
+                    <p class="beast-type"><span>Sistema de Gestión de Turnos</span></p>
+                    <p class="beast-role">Fundador &amp; Desarrollador · Ago 2026</p>
+                    <p>
+                        Aplicación web para la gestión y administración de turnos, orientada a digitalizar procesos de
+                        reserva y organización. Diseño y desarrollo integral, lógica de negocio para la gestión de
+                        turnos, funcionalidades de administración y evolución del producto a partir de nuevos
+                        requerimientos.
+                    </p>
+                    <ul class="beast-tags">
+                        <li>C#</li>
+                        <li>ASP.NET Core</li>
+                        <li>SQL Server</li>
+                    </ul>
+                    <dl class="beast-stats">
+                        <div><dt>Rol</dt><dd>Fundador &amp; Dev</dd></div>
+                        <div><dt>Estado</dt><dd>En evolución</dd></div>
+                    </dl>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             HABILIDADES — "El Taller"
+             ============================================================ -->
+        <section id="habilidades" class="district district--taller reveal">
+            <p class="district-rune" aria-hidden="true">&#10022;</p>
+            <h2 class="district-title">El Taller</h2>
+            <p class="district-kicker">Habilidades</p>
+
+            <div class="skills">
+                <article class="skill">
+                    <h3 class="skill-name">Backend</h3>
+                    <p class="skill-tools">C# · .NET Framework · .NET · ASP.NET Core MVC · ASP.NET WebForms · APIs REST
+                        · Programación Orientada a Objetos</p>
+                </article>
+                <article class="skill">
+                    <h3 class="skill-name">Arquitectura y desarrollo</h3>
+                    <p class="skill-tools">Arquitectura en capas · Lógica de negocio · DTOs · Validaciones · Manejo de
+                        excepciones · Autenticación y roles · Multi-tenant</p>
+                </article>
+                <article class="skill">
+                    <h3 class="skill-name">Bases de datos</h3>
+                    <p class="skill-tools">SQL Server · ADO.NET · LINQ · Stored Procedures · Joins · Vistas · Modelado
+                        relacional · Optimización de consultas</p>
+                </article>
+                <article class="skill">
+                    <h3 class="skill-name">Frontend</h3>
+                    <p class="skill-tools">HTML5 · CSS3 · JavaScript · Razor · Bootstrap</p>
+                </article>
+                <article class="skill">
+                    <h3 class="skill-name">Cloud y Deploy</h3>
+                    <p class="skill-tools">Microsoft Azure (App Service) · Vercel · Deploy de aplicaciones web ·
+                        Configuración de entornos (dev / producción)</p>
+                </article>
+                <article class="skill">
+                    <h3 class="skill-name">Herramientas</h3>
+                    <p class="skill-tools">Git · GitHub · Visual Studio · SQL Server Management Studio · Postman</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================================================
+             EXPERIENCIA — "El Camino del Cazador"
+             ============================================================ -->
+        <section id="experiencia" class="district district--camino reveal">
+            <p class="district-rune" aria-hidden="true">&#10022;</p>
+            <h2 class="district-title">El Camino del Cazador</h2>
+            <p class="district-kicker">Experiencia</p>
+            <ol class="path">
+                <li class="path-node">
+                    <span class="path-lamp" aria-hidden="true"></span>
+                    <div class="path-body">
+                        <h3>Operador Informático — Willder S.A.</h3>
+                        <p class="path-date">2005 — 2026</p>
+                        <ul>
+                            <li>Elaboración y optimización de informes de producción, aportando al seguimiento y la
+                                planificación de las operaciones.</li>
+                            <li>Desarrollo de tizados optimizados para maximizar el aprovechamiento de materiales y
+                                mejorar la planificación de cortes.</li>
+                            <li>Coordinación de equipos de trabajo y gestión del abastecimiento del sector.</li>
+                            <li>Análisis de requerimientos operativos y resolución de necesidades de producción,
+                                planificación y gestión de recursos.</li>
+                            <li>Uso de herramientas informáticas y software especializado aplicado a procesos de
+                                producción y desarrollo técnico de prendas.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- ============================================================
+             EDUCACION — "El Archivo"
+             ============================================================ -->
+        <section id="educacion" class="district district--archivo reveal">
+            <p class="district-rune" aria-hidden="true">&#10022;</p>
+            <h2 class="district-title">El Archivo</h2>
+            <p class="district-kicker">Educación y sellos</p>
+            <ul class="tome-list">
+                <li><strong>Tecnicatura en Programación</strong> — Universidad Tecnológica Nacional (UTN) · 2022 — 2026.
+                    Programación estructurada, POO, C++, C#, bases de datos y desarrollo de software.</li>
+            </ul>
+            <p class="archivo-note">Cursos y certificaciones:</p>
+            <ul class="seal-list">
+                <li>JavaScript — Coderhouse (2024)</li>
+                <li>Desarrollo Web — Coderhouse (2023)</li>
+                <li>Bases de Datos — Fundamentos Avanzados — Centro de e-Learning UTN FRBA (2022)</li>
+            </ul>
+        </section>
+
+        <!-- ============================================================
+             CONTACTO — "El Mensajero"
+             ============================================================ -->
+        <section id="contacto" class="district district--mensajero reveal">
+            <p class="district-rune" aria-hidden="true">&#10022;</p>
+            <h2 class="district-title">El Mensajero</h2>
+            <p class="district-kicker">Contacto</p>
+
+            <div class="contacto">
+                <div class="contacto-data">
+                    <p><strong>Desarrollador de Software .NET · Backend</strong></p>
+                    <p><span class="c-icon" aria-hidden="true">&#9679;</span> Moreno, Buenos Aires</p>
+                    <p><span class="c-icon" aria-hidden="true">&#9993;</span>
+                        <a href="mailto:gonzaloarielacuna@gmail.com">gonzaloarielacuna@gmail.com</a></p>
+                    <p><span class="c-icon" aria-hidden="true">&#9743;</span>
+                        <a href="tel:+541122684117">+54 11-2268-4117</a></p>
+                    <p><span class="c-icon" aria-hidden="true">&#9873;</span>
+                        <a href="https://github.com/GonzaloAriel" rel="me noreferrer" target="_blank">GitHub</a>
+                        &middot;
+                        <a href="https://linkedin.com/in/gonzalo-ariel-acuña" rel="me noreferrer"
+                            target="_blank">LinkedIn</a>
+                    </p>
+                    <p class="contacto-avail">
+                        Disponibilidad para posiciones de Desarrollo Backend / .NET. Interés en sistemas de gestión,
+                        APIs, aplicaciones web y soluciones orientadas a procesos de negocio.
+                    </p>
+                </div>
+
+                <form class="mensaje" action="https://formsubmit.co/gonzaloarielacuna@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde el portfolio">
+
+                    <label for="name">Tu nombre, Cazador</label>
+                    <input type="text" name="name" id="name" placeholder="Nombre" required>
+
+                    <label for="email">Sello de correo</label>
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+
+                    <label for="message">Mensaje al Mensajero</label>
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Escribí tu mensaje..."
+                        required></textarea>
+
+                    <button class="btn-sello" type="submit">
+                        <span class="sello-wax" aria-hidden="true"></span>
+                        <span>Sellar y enviar</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ============================================================
+         FOOTER — "El Sueño del Cazador"
+         ============================================================ -->
+    <footer class="site-footer">
+        <div class="messenger" aria-hidden="true">
+            <svg viewBox="0 0 120 160">
+                <path
+                    d="M60 12 a16 16 0 0 1 16 16 v10 c0 14 -8 22 -16 22 s-16 -8 -16 -22 v-10 a16 16 0 0 1 16 -16z"
+                    fill="currentColor" />
+                <path d="M60 60 c22 0 34 16 34 40 v34 h-68 v-34 c0 -24 12 -40 34 -40z" fill="currentColor" />
+                <rect x="18" y="96" width="84" height="34" rx="3" fill="#1a1410"
+                    stroke="currentColor" stroke-width="2" />
+                <path d="M30 108 h60 M30 118 h44" stroke="currentColor" stroke-width="2" />
+            </svg>
+            <span class="messenger-sign">Mensajero</span>
+        </div>
+        <p class="footer-credit">
+            &copy; <span id="year">2024</span> Gonzalo Ariel Acuña &middot; Portfolio personal
+        </p>
+        <p class="footer-note">
+            Ambientado en "La Ciudad Velada". Atmósfera inspirada en la estética victoriana-gótica.
+        </p>
+        <p class="footer-hint">Psst&hellip; el sigilo guarda un secreto.</p>
+    </footer>
+
+    <noscript>
+        <style>
+            .loader,
+            .cursor-dot,
+            .cursor-halo,
+            .scroll-vial,
+            .scroll-hint {
+                display: none !important;
+            }
+
+            body.is-loading {
+                overflow: auto !important;
+            }
+
+            .district,
+            .hero-content {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+
+    <script src="./js/main.js" defer></script>
 </body>
 
 </html>
